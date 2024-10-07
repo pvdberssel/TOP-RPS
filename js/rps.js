@@ -12,23 +12,23 @@ function playRound(){
     const humanChoice = getHumanChoice();
     const computerChoice = getComputerChoice();
 
-    console.log('Your choice: ' + humanChoice);
-    console.log('Computer choice: ' + computerChoice);
 
+    let textChoice = 'Your choice:  ' + humanChoice + '\nComputer choice:  ' + computerChoice;
+    console.log(textChoice);
     if (humanChoice === computerChoice){
-        alert('Draw')
+        alert(textChoice + '\nDraw')
     } else if (humanChoice == 'rock' && computerChoice == 'scissors'){
-        alert('You win');
+        alert(textChoice + '\nYou win!');
         humanScore += 1;
     } else if (humanChoice == 'paper' && computerChoice == 'rock'){
-        alert('You win');
+        alert(textChoice + '\nYou win!');
         humanScore += 1;
     }
     else if (humanChoice == 'scissor' && computerChoice == 'paper'){
-        alert('You win');
+        alert(textChoice + '\nYou win!');
         humanScore += 1;
     } else {
-        alert('You lose');
+        alert(textChoice+ '\nYou lose!');
         computerScore += 1;
     }
     UpdateScore();
