@@ -66,7 +66,7 @@ function getHumanChoice(){
     choice = choice.toLowerCase();
 
     while(!(choice == 'rock' || choice == 'paper' || choice == 'scissors')){
-        console.log('Try again, Input invalid')
+        alert('Try again, Input invalid')
         choice = prompt("Rock, Paper or Scissors?");
         choice = choice.toLowerCase();
     }
