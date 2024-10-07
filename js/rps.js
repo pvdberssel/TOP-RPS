@@ -62,7 +62,7 @@ function getRandomInt(max){
 }
 
 function getHumanChoice(){
-    let choice = prompt("Rock, Paper or Scissors? or quit");
+    let choice = prompt("Rock, Paper or Scissors?");
     choice = choice.toLowerCase();
 
     while(!(choice == 'rock' || choice == 'paper' || choice == 'scissors')){
