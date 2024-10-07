@@ -81,8 +81,6 @@ function quitGame(){
 }
 
 function UpdateScore(){
-    console.log(document.getElementById("your-score").innerHTML);
     document.getElementById("your-score").innerHTML = humanScore;
-    console.log(document.getElementById("your-score").innerHTML);
     document.getElementById("computer-score").innerHTML = computerScore;
 }
