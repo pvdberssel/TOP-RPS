@@ -24,7 +24,7 @@ button{
     border-width: 2px;
 }
 
-.your-score, .computer-score{
+#your-score, #computer-score{
     padding: 20px;
     text-align: center;
     font-size:20px;

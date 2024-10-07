@@ -31,6 +31,7 @@ function playRound(){
         alert('You lose');
         computerScore += 1;
     }
+    UpdateScore();
 }
 
 function startGame(){
@@ -53,7 +54,6 @@ function getComputerChoice(){
             choice = 'scissors';
             break;
     }
-    
     return choice;
 }
 
@@ -74,7 +74,15 @@ function getHumanChoice(){
 }
 
 function quitGame(){
+    alert('Resetting Game');
     humanScore = 0;
-    computerChoice = 0;
+    computerScore = 0;
+    UpdateScore()
+}
 
+function UpdateScore(){
+    console.log(document.getElementById("your-score").innerHTML);
+    document.getElementById("your-score").innerHTML = humanScore;
+    console.log(document.getElementById("your-score").innerHTML);
+    document.getElementById("computer-score").innerHTML = computerScore;
 }
