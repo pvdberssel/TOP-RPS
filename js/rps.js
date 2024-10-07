@@ -5,34 +5,37 @@ let humanScore = 0;
 let computerScore = 0;
 
 
-playRound();
+
 
 function playRound(){
 
     const humanChoice = getHumanChoice();
     const computerChoice = getComputerChoice();
 
-    console.log(humanChoice);
-    console.log(computerChoice);
+    console.log('Your choice: ' + humanChoice);
+    console.log('Computer choice: ' + computerChoice);
 
     if (humanChoice === computerChoice){
-        console.log('Draw')
+        alert('Draw')
     } else if (humanChoice == 'rock' && computerChoice == 'scissors'){
-        console.log('You win');
+        alert('You win');
         humanScore += 1;
     } else if (humanChoice == 'paper' && computerChoice == 'rock'){
-        console.log('You win');
+        alert('You win');
         humanScore += 1;
     }
     else if (humanChoice == 'scissor' && computerChoice == 'paper'){
-        console.log('You win');
+        alert('You win');
         humanScore += 1;
     } else {
-        console.log('You lose');
+        alert('You lose');
         computerScore += 1;
     }
 }
 
+function startGame(){
+    playRound();
+}
 
 
 
@@ -59,7 +62,7 @@ function getRandomInt(max){
 }
 
 function getHumanChoice(){
-    let choice = prompt("Rock, Paper or Scissors?");
+    let choice = prompt("Rock, Paper or Scissors? or quit");
     choice = choice.toLowerCase();
 
     while(!(choice == 'rock' || choice == 'paper' || choice == 'scissors')){
@@ -68,4 +71,10 @@ function getHumanChoice(){
         choice = choice.toLowerCase();
     }
     return choice.toLowerCase();
+}
+
+function quitGame(){
+    humanScore = 0;
+    computerChoice = 0;
+
 }
