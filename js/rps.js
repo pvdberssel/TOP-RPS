@@ -92,6 +92,14 @@ function quitGame(){
     computerScore = 0;
     let winContainer = document.querySelector('.win-lose');
     winContainer.textContent = '';
+
+    let yourChoiceContainer = document.querySelector('.your-choice');
+    yourChoiceContainer.textContent = 'Your choice:  ';
+
+    let computerChoiceContainer = document.querySelector('.computer-choice');
+    computerChoiceContainer.textContent = 'Computer choice:  ';
+
+
     UpdateScore()
 }
 
