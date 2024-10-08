@@ -18,22 +18,30 @@ function playRound(choice){
     const humanChoice = choice;
     const computerChoice = getComputerChoice();
 
+    let yourChoiceContainer = document.querySelector('.your-choice');
+    yourChoiceContainer.textContent = 'Your choice:  ' + humanChoice;
+
+    let computerChoiceContainer = document.querySelector('.computer-choice');
+    computerChoiceContainer.textContent = 'Computer choice:  ' + computerChoice;
+
+    let winContainer = document.querySelector('.win-lose');
+    
 
     let textChoice = 'Your choice:  ' + humanChoice + '\nComputer choice:  ' + computerChoice;
     if (humanChoice === computerChoice){
-        alert(textChoice + '\nDraw')
+        winContainer.textContent = 'Draw';
     } else if (humanChoice == 'rock' && computerChoice == 'scissors'){
-        alert(textChoice + '\nYou win!');
+        winContainer.textContent = 'You win!';
         humanScore += 1;
     } else if (humanChoice == 'paper' && computerChoice == 'rock'){
-        alert(textChoice + '\nYou win!');
+        winContainer.textContent = 'You win!';
         humanScore += 1;
     }
-    else if (humanChoice == 'scissor' && computerChoice == 'paper'){
-        alert(textChoice + '\nYou win!');
+    else if (humanChoice == 'scissors' && computerChoice == 'paper'){
+        winContainer.textContent = 'You win!';
         humanScore += 1;
     } else {
-        alert(textChoice+ '\nYou lose!');
+        winContainer.textContent = 'You lose!';
         computerScore += 1;
     }
     UpdateScore();
@@ -82,11 +90,14 @@ function quitGame(){
     alert('Resetting Game');
     humanScore = 0;
     computerScore = 0;
+    let winContainer = document.querySelector('.win-lose');
+    winContainer.textContent = '';
     UpdateScore()
 }
 
 function UpdateScore(){
     document.getElementById("your-score").innerHTML = humanScore;
     document.getElementById("computer-score").innerHTML = computerScore;
+
 }
 
