@@ -4,17 +4,22 @@ console.log("Hello World!")
 let humanScore = 0;
 let computerScore = 0;
 
+let buttons= document.querySelectorAll('.rps')
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        const choice = button.textContent.toLowerCase();
+        playRound(choice);
+    })
+})
 
 
+function playRound(choice){
 
-function playRound(){
-
-    const humanChoice = getHumanChoice();
+    const humanChoice = choice;
     const computerChoice = getComputerChoice();
 
 
     let textChoice = 'Your choice:  ' + humanChoice + '\nComputer choice:  ' + computerChoice;
-    console.log(textChoice);
     if (humanChoice === computerChoice){
         alert(textChoice + '\nDraw')
     } else if (humanChoice == 'rock' && computerChoice == 'scissors'){
@@ -84,3 +89,4 @@ function UpdateScore(){
     document.getElementById("your-score").innerHTML = humanScore;
     document.getElementById("computer-score").innerHTML = computerScore;
 }
+
