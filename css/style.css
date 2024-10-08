@@ -4,6 +4,7 @@ body{
     display:flex;
     flex-direction: column;
     align-items: center;
+    gap: 16px;
 }
 
 h1{
@@ -30,6 +31,22 @@ button{
     font-size:20px;
 }
 
+.reset{
+    margin: 50px;
+}
+
+.rock{
+    background-color: brown;
+}
+
+.paper{
+    background-color: whitesmoke;
+    color:black;
+}
+
+.scissors{
+    background-color: cadetblue;
+}
 .score-container{
     padding:10px;
 }
